@@ -16,6 +16,13 @@ import {
   View,
 } from 'react-native';
 
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import HomeScreen from './src/screens/HomeScreen.tsx';
+import AddExpenseScreen from './src/screens/AddExpenseScreen.tsx';
+
+const Stack = createNativeStackNavigator();
+
 import {
   Colors,
   DebugInstructions,
@@ -55,6 +62,12 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 }
 
 function App(): React.JSX.Element {
+  <NavigationContainer>
+    <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="AddExpense" component={AddExpenseScreen} />
+    </Stack.Navigator>
+  </NavigationContainer>
   const isDarkMode = useColorScheme() === 'dark';
 
   const backgroundStyle = {
