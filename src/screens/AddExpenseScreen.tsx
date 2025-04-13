@@ -1,22 +1,8 @@
 import React from 'react';
 import { View, Text, TextInput, Button } from 'react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
-import { RootStackParamList } from '../navigation/types';
+import { RootStackParamList } from '../navigation/types'; // adjust path if needed
 
-type Props = NativeStackScreenProps<RootStackParamList, 'Home'>; // or 'AddExpense'
-
-export default function HomeScreen({ navigation }: Props) {
-  // ...
-}
-
-
-// Define your route params (even if they're empty for now)
-type RootStackParamList = {
-  Home: undefined;
-  AddExpense: undefined;
-};
-
-// Typing props using NativeStackScreenProps
 type Props = NativeStackScreenProps<RootStackParamList, 'AddExpense'>;
 
 export default function AddExpenseScreen({ navigation }: Props) {
