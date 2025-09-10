@@ -3,12 +3,20 @@
     x:Class="ManualExpenseTracker.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:ManualExpenseTracker"
+    xmlns:pages="clr-namespace:ManualExpenseTracker.Pages"
     Title="ManualExpenseTracker">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+        ContentTemplate="{DataTemplate pages:HomePage}"
+        Route="HomePage" />
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate pages:LoginPage}"
+        Route="LoginPage" />
+    <ShellContent
+        Title="Input"
+        ContentTemplate="{DataTemplate pages:InputPage}"
+        Route="InputPage" />
+    
 </Shell>
